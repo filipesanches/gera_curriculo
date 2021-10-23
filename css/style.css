@@ -73,6 +73,7 @@ input, select{
   padding: 10px;
 }
 :focus, :valid{
+  background-color: #fff;
   outline: 1px solid steelblue;
   outline-offset: 2px;
 }
