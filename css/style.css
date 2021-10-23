@@ -66,14 +66,13 @@ fieldset{
   border-radius: 5px;
 }
 input, select{
-  backgroun-color: #fff;
+  background-color: #fff;
   border: 1px solid steelblue;
   border-radius: 3px;
   width: 100%;
   padding: 10px;
 }
 :focus, :valid{
-  background-color: #fff;
   outline: 1px solid steelblue;
   outline-offset: 2px;
 }
@@ -107,5 +106,6 @@ select:valid+label{
 @media screen and (max-width:800px) {
   .inputs{
     width: calc(100% - 50px);
-  } 
+  }
+  
 }
