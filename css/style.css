@@ -66,6 +66,7 @@ fieldset{
   border-radius: 5px;
 }
 input, select{
+  backgroun-color: #fff;
   border: 1px solid steelblue;
   border-radius: 3px;
   width: 100%;
