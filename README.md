@@ -1,1 +1,1 @@
-# geracurricolo
+# geracurriculo
