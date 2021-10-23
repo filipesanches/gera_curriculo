@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Gera Curriculo</title>
+</head>
+<body>
+  <header>
+    <h1>Gera Curriculo <span><i class="fas fa-file-alt"></i></span></h1>
+    <p>Preencha os dados com atenção.</p>
+  </header>
+  <section>
+    <form action="">
+      <fieldset>
+        <legend>Formulário</legend>
+        <div class="accordion">Dados Pessoais:</div>
+        <div class="painel">
+          <div class="inputs">
+            <input type="text" name="nome" id="nome" required="required">
+            <label for="nome">Nome completo:</label>
+          </div>
+          <div class="inputs">
+            <input type="email" name="email" id="email" required="required">
+            <label for="email">E-mail:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="nacionalidade" id="nacionalidade" required="required">
+            <label for="nacionalidade">Nacionalidade:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="data_nasc" id="data_nasc" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+            <label for="data_nasc">Data de Nascimento:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="telefone" id="telefone" required="required">
+            <label for="telefone">Telefone:</label>
+          </div>
+          <div class="inputs">
+            <select name="estado_civil" id="estado_civil" required="required">
+              <option value="" hidden></option>
+              <option value="Solteiro (a)">Solteiro (a)</option>
+              <option value="Casado (a)">Casado (a)</option>
+              <option value="Viúvo (a)">Viúvo (a)</option>
+              <option value="Divorciado (a)">Divorciado (a)</option>
+            </select>
+            <label for="estado_civil">Estado cívil:</label>
+          </div>
+        </div>
+
+        <div class="accordion">Endereço:</div>
+        <div class="painel">
+          <div class="inputs">
+            <input type="number" name="cep" id="cep" required="required">
+            <label for="cep">CEP:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="logradouro" id="logradouro" required="required">
+            <label for="logradouro">Logradouro:</label>
+          </div>
+          <div class="inputs">
+            <input type="number" name="numero" id="numero" required="required">
+            <label for="numero">Número:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="estado" id="estado" required="required">
+            <label for="estado">Estado:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="bairro" id="bairro" required="required">
+            <label for="bairro">Bairro:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="cidade" id="cidade" required="required">
+            <label for="cidade">Cidade:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="complemento" id="complemento" required="required">
+            <label for="complemento">Complemento:</label>
+          </div>
+        </div>
+
+        <div class="accordion">Objetivo:</div>
+        <div class="painel">
+          <div class="inputs">
+            <input type="text" name="objetivo" id="objetivo" required="required">
+            <label for="objetivo">Objetivo:</label>
+          </div>
+        </div>
+        
+        <div class="accordion">Formação acadêmica:</div>
+        <div class="painel">
+          <div id="add">
+            <div class="inputs">
+              <input type="text" name="ncurso" id="ncurso" required="required">
+              <label for="ncurso">Nome do curso:</label>
+            </div>
+            <div class="inputs">
+              <input type="text" name="instituicao" id="instituicao" required="required">
+              <label for="instituicao">Instituicão:</label>
+            </div>
+            <div class="inputs">
+              <input type="text" name="dtconclusao" id="dtconclusao" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+              <label for="dtconclusao">Data de conclusão:</label>
+            </div>
+          </div>
+          <div class="inputs">
+            <a href="#" onclick="acao()" style="float: right; border: none; outline: none;">Adiciona Formação</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+  <script src="js/accordion.js"></script>
+</body>
+</html>

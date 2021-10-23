@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+body{
+  font-family: roboto, Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f0f0f0;
+}
+
+/*Aqui começa o Rodapé*/
+header{
+  background: #A7BAD4 linear-gradient(25deg, #A7D1D4 20%, #C2F6EA 200px 40%, transparent);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+header h1{
+  position: relative;
+  padding: 15px 20px 25px 20px;
+  display: inline-block;
+  font-size: 45px;
+  background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: black;
+}
+header p{
+  color: #C2F6EA;
+  padding: 20px;
+  background-color: steelblue;
+}
+/*Aqui termina o Rodapé*/
+
+/*Aqui começa o Formulario*/
+/*Aqui começa o accordion*/
+.accordion{
+  border-radius: 5px;
+  background-color: #d4e4df;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  padding: 18px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.active, .accordion:hover {
+  color: #C2F6EA;
+  background-color: rgb(69, 88, 104);
+}
+.painel {
+  transition: 200ms;
+  height: auto;
+  padding: 20px 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+/*Aqui termina o accordion*/
+
+form, legend{
+  padding: 10px;
+}
+fieldset{
+  padding: 20px;
+  border: 2px solid steelblue;
+  border-radius: 5px;
+}
+input, select{
+  border: 1px solid steelblue;
+  border-radius: 3px;
+  width: 100%;
+  padding: 10px;
+}
+:focus, :valid{
+  outline: 1px solid steelblue;
+  outline-offset: 2px;
+}
+.inputs{
+  padding: 10px 20px;
+  position: relative;
+  width: calc(50% - 50px);
+  float: left;
+}
+.inputs::after{
+  content: "";
+  display: table;
+  clear: both;
+}
+.inputs label{
+  transition: 500ms;
+  position: absolute;
+  top: 20px;
+  left: 35px;
+}
+input:focus+label,
+select:focus+label,
+input:valid+label,
+select:valid+label{
+  padding: 0 10px;
+  background-color: #fff;
+  transform: translate(10px,-18px);
+}
+/*Aqui começa o Formulario*/
