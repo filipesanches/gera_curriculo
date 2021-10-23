@@ -100,4 +100,10 @@ select:valid+label{
   background-color: #fff;
   transform: translate(10px,-18px);
 }
-/*Aqui começa o Formulario*/
+/*Aqui termina o Formulario*/
+
+@media screen and (max-width:800px) {
+  .inputs{
+    width: calc(100% - 50px);
+  } 
+}
