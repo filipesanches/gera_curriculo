@@ -127,9 +127,6 @@ select:valid+label{
   background-color: #fff;
   transform: translate(10px,-30px);
 }
-/*Aqui termina o Formulario*/
-
-
 #add1{
   display: none;
 }
@@ -138,6 +135,23 @@ select:valid+label{
   clear: both;
   display: table;
 }
+/*Aqui termina o Formulario*/
+
+footer{
+  color: #fff;
+  text-align: center;
+  margin-top: 100px;
+  background-color: steelblue;
+  padding: 50px;
+}
+footer p{
+  padding: 10px;
+}
+footer a{
+  color: #fff;
+  text-decoration: none;
+}
+
 
 
 @media screen and (max-width:800px) {
