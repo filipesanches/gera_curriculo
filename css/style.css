@@ -97,7 +97,7 @@ input, select{
   width: 100%;
   padding: 10px;
 }
-input:focus, input:valid{
+input:focus, input:valid, select:focus, select:valid{
   border-radius: 3px;
   outline: 1px solid steelblue;
   outline-offset: 2px;
