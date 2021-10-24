@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
-  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Gera Curriculo</title>
 </head>
@@ -94,6 +93,7 @@
         
         <div class="accordion">Formação acadêmica:</div>
         <div class="painel">
+
           <div id="add">
             <div class="inputs">
               <input type="text" name="ncurso" id="ncurso" required="required">
@@ -107,10 +107,29 @@
               <input type="text" name="dtconclusao" id="dtconclusao" onfocus="this.type='date'" onblur="this.type='text'" required="required">
               <label for="dtconclusao">Data de conclusão:</label>
             </div>
+            <div class="inputs">
+              <button onclick="maisFormacao()">Adicionar Formação</button>
+            </div>
           </div>
-          <div class="inputs">
-            <a href="#" onclick="acao()" style="float: right; border: none; outline: none;">Adiciona Formação</button>
+          <div id="add1">
+            <div class="inputs">
+              <input type="text" name="ncurso" id="ncurso" required="required">
+              <label for="ncurso">Nome do curso:</label>
+            </div>
+            <div class="inputs">
+              <input type="text" name="instituicao" id="instituicao" required="required">
+              <label for="instituicao">Instituicão:</label>
+            </div>
+            <div class="inputs">
+              <input type="text" name="dtconclusao" id="dtconclusao" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+              <label for="dtconclusao">Data de conclusão:</label>
+            </div>
+            <div class="inputs">
+              <a href="" onclick="maisFormacao()">Adicionar Formação</a>
+              <a href="" onclick="menosFormacao()">Remover Formação</a>
+            </div>
           </div>
+
         </div>
       </fieldset>
     </form>
