@@ -16,3 +16,9 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+function maisFormacao(){
+  document.getElementById("add1").style.display = "initial";
+}
+function menosFormacao() {
+  document.getElementById("add1").style.display = "none";
+}
