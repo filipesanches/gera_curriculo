@@ -45,7 +45,7 @@
     <p id="principais-atividades"></p>
   </div>
   <div id="editor"></div>
-  <button id="cmd" onclick="CreatePDFfromHTML()">generate PDF</button>
+  <button id="cmd" onclick="CreatePDFfromHTML()">Gerar PDF</button>
 
 
 
@@ -149,7 +149,7 @@ function CreatePDFfromHTML() {
             pdf.addPage(PDF_Width, PDF_Height);
             pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
         }
-        pdf.save("Your_PDF_Name.pdf");
+        pdf.save("curriculo.pdf");
         $(".html-content").hide();
     });
 }
