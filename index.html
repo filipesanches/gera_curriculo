@@ -14,7 +14,7 @@
     <p>Preencha os dados com atenção.</p>
   </header>
   <section>
-    <form action="#">
+    <form action="gerarpdf.html" method="get">
       <fieldset>
         <legend><h2>Formulário</h2></legend>
         <div class="accordion">Dados Pessoais:</div>
@@ -23,6 +23,7 @@
             <input type="text" name="nome" id="nome" required="required">
             <label for="nome">Nome completo:</label>
           </div>
+
           <div class="inputs">
             <input type="email" name="email" id="email" required="required">
             <label for="email">E-mail:</label>
@@ -48,15 +49,12 @@
               <option value="Divorciado">Divorciado (a)</option>
             </select>
             <label for="estado_civil">Estado cívil:</label>
-          </div>
+          </div> 
+
         </div>
 
         <div class="accordion">Endereço:</div>
         <div class="painel">
-          <div class="inputs">
-            <input type="number" name="cep" id="cep" required="required">
-            <label for="cep">CEP:</label>
-          </div>
           <div class="inputs">
             <input type="text" name="logradouro" id="logradouro" required="required">
             <label for="logradouro">Logradouro:</label>
@@ -77,10 +75,6 @@
             <input type="text" name="cidade" id="cidade" required="required">
             <label for="cidade">Cidade:</label>
           </div>
-          <div class="inputs">
-            <input type="text" name="complemento" id="complemento" required="required">
-            <label for="complemento">Complemento:</label>
-          </div>
         </div>
 
         <div class="accordion">Objetivo:</div>
@@ -90,7 +84,7 @@
             <label for="objetivo">Objetivo:</label>
           </div>
         </div>
-        
+       
         <div class="accordion">Formação acadêmica:</div>
         <div class="painel">
           <div id="add">
@@ -107,29 +101,56 @@
               <label for="dtconclusao">Data de conclusão:</label>
             </div>
             <div class="inputs">
-              <button onclick="maisFormacao()">Adicionar Formação</button>
+              <a onclick="maisFormacao()">Adicionar Formação</a>
             </div>
           </div>
 
           <div id="add1">
             <div class="inputs">
-              <input type="text" name="ncurso1" id="ncurso1" required="required">
+              <input type="text" name="ncurso1" id="ncurso1">
               <label for="ncurso1">Nome do curso:</label>
             </div>
             <div class="inputs">
-              <input type="text" name="instituicao1" id="instituicao1" required="required">
+              <input type="text" name="instituicao1" id="instituicao1">
               <label for="instituicao1">Instituicão:</label>
             </div>
             <div class="inputs">
-              <input type="text" name="dtconclusao1" id="dtconclusao1" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+              <input type="text" name="dtconclusao1" id="dtconclusao1" onfocus="this.type='date'" onblur="this.type='text'">
               <label for="dtconclusao1">Data de conclusão:</label>
             </div>
             <div class="inputs">
-              <button onclick="menosFormacao()">Remover Formação</button>
+              <a  onclick="menosFormacao()">Remover Formação</a>
             </div>
           </div>
 
+
+
         </div>
+        <div class="accordion">Experiência profissional:</div>
+        <div class="painel">
+          <div class="inputs">
+            <input type="text" name="empresa" id="empresa" required="required">
+            <label for="empresa">Empresa:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="dataentd" id="dataentd" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+            <label for="dataentd">Data de Entrada:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="datasaida" id="datasaida" onfocus="this.type='date'" onblur="this.type='text'" required="required">
+            <label for="datasaida">Data de Saída:</label>
+          </div>
+          <div class="inputs">
+            <input type="text" name="cargo" id="cargo" required="required">
+            <label for="cargo">Cargo:</label>
+          </div>
+          <div class="inputs">
+            <textarea name="principais-atividades" id="principais-atividades"  rows="10" required="required"></textarea>
+            <label for="principais-atividades">Descreva suas principais atividades:</label>
+          </div>
+        </div>
+
+        <input type="submit" value="Gerar PDF">
       </fieldset>
     </form>
   </section>

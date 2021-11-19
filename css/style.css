@@ -90,14 +90,14 @@ form{
 legend{
   padding: 0 0 20px 20px;
 }
-input, select{
+input, select, textarea{
   background-color: #fff;
   border: 1px solid steelblue;
   border-radius: 3px;
   width: 100%;
   padding: 10px;
 }
-input:focus, input:valid, select:focus, select:valid{
+input:focus, input:valid, select:focus, select:valid, textarea:focus, textarea:valid{
   border-radius: 3px;
   outline: 1px solid steelblue;
   outline-offset: 2px;
@@ -121,8 +121,10 @@ input:focus, input:valid, select:focus, select:valid{
 }
 input:focus+label,
 select:focus+label,
+textarea:focus+label,
 input:valid+label,
-select:valid+label{
+select:valid+label,
+textarea:valid+label{
   padding: 0 10px;
   background-color: #fff;
   transform: translate(10px,-30px);
@@ -135,7 +137,20 @@ select:valid+label{
   clear: both;
   display: table;
 }
+
+textarea{
+  padding: 15px;
+  position: relative;
+  width:100%;
+  float: left;
+}
+input[type="submit"]{
+  margin: 10px 0 0 0;
+  background-color: #4682b4;
+  color: #fff;
+}
 /*Aqui termina o Formulario*/
+
 
 footer{
   color: #fff;

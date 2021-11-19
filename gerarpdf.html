@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+  <title>Gera Curriculo</title>
+</head>
+<body>
+  <div class="html-content">
+
+    <h2>Dados Pessoais:</h2>
+    <p id="nome"></p>
+    <p id="email"></p>
+    <p id="nacionalidade"></p>
+    <p id="data_nasc"></p>
+    <p id="telefone"></p>
+    <p id="estado_civil"></p>
+
+    <h2>Endereço:</h2>
+    <p id="logradouro"></p>
+    <p id="numero"></p>
+    <p id="bairro"></p>
+    <p id="cidade"></p>
+    <p id="estado"></p>
+
+    <h2>Objetivo:</h2>
+    <p id="objetivo"></p>
+
+    <h2>Formação:</h2>
+    <p id="ncurso"></p>
+    <p id="instituicao"></p>
+    <p id="dtconclusao"></p>
+    <p id="ncurso1"></p>
+    <p id="instituicao1"></p>
+    <p id="dtconclusao1"></p>
+
+    <h2>Experiência profissional:</h2>
+    <p id="empresa"></p>
+    <p id="dataentd"></p>
+    <p id="datasaida"></p>
+    <p id="cargo"></p>
+    <p id="principais-atividades"></p>
+  </div>
+  <div id="editor"></div>
+  <button id="cmd" onclick="CreatePDFfromHTML()">generate PDF</button>
+
+
+
+  <script>
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, '\\$&');
+      var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    //Dados Pessoais
+    var nome = getParameterByName('nome');
+    var email = getParameterByName('email');
+    var nacionalidade = getParameterByName('nacionalidade');
+    var data_nasc = getParameterByName('data_nasc');
+    var telefone = getParameterByName('telefone');
+    var estado_civil = getParameterByName('estado_civil');
+
+    //Endereco
+    var logradouro = getParameterByName('logradouro');
+    var numero = getParameterByName('numero');
+    var bairro = getParameterByName('bairro');
+    var cidade = getParameterByName('cidade');
+    var estado = getParameterByName('estado');
+
+    //Objetivo
+    var objetivo = getParameterByName('objetivo');
+
+    //Formação
+    var ncurso = getParameterByName('ncurso');
+    var instituicao = getParameterByName('instituicao');
+    var dtconclusao = getParameterByName('dtconclusao');
+    var ncurso1 = getParameterByName('ncurso1');
+    var instituicao1 = getParameterByName('instituicao1');
+    var dtconclusao1 = getParameterByName('dtconclusao1');
+    
+    //Experiencia
+    var empresa = getParameterByName('empresa');
+    var dataentd = getParameterByName('dataentd');
+    var datasaida = getParameterByName('datasaida');
+    var cargo = getParameterByName('cargo');
+    var principaisatividades = getParameterByName('principais-atividades');
+
+    //Dados Pessoais
+    document.getElementById("nome").innerHTML = "Nome: " + nome;
+    document.getElementById("email").innerHTML = "E-mail: " + email;
+    document.getElementById("nacionalidade").innerHTML =  "Nacionalidade: " + nacionalidade;
+    document.getElementById("data_nasc").innerHTML = "Data de Nascimento: " + data_nasc;
+    document.getElementById("telefone").innerHTML = "Telefone: " + telefone;
+    document.getElementById("estado_civil").innerHTML = "Estado cívil: " + estado_civil;
+  
+    //Endereco
+    document.getElementById("logradouro").innerHTML = "Logradouro: " + logradouro;
+    document.getElementById("numero").innerHTML = "Número: " + numero;
+    document.getElementById("bairro").innerHTML = "Bairro: " + bairro;
+    document.getElementById("cidade").innerHTML = "Cidade: "+ cidade;
+    document.getElementById("estado").innerHTML = "Estado: " + estado;
+  
+  //Objetivo
+  document.getElementById("objetivo").innerHTML = objetivo;
+  
+  //Formação
+  document.getElementById("ncurso").innerHTML = ncurso;
+  document.getElementById("instituicao").innerHTML = instituicao;
+  document.getElementById("dtconclusao").innerHTML = dtconclusao;
+  document.getElementById("ncurso1").innerHTML = ncurso1;
+  document.getElementById("instituicao1").innerHTML = instituicao1;
+  document.getElementById("dtconclusao1").innerHTML = dtconclusao1;
+
+
+  
+  //Experiencia
+  document.getElementById("empresa").innerHTML = empresa;
+  document.getElementById("dataentd").innerHTML = "Início: " + dataentd;
+  document.getElementById("datasaida").innerHTML = "Término: " + datasaida;
+  document.getElementById("cargo").innerHTML = "Cargo: " + cargo;
+  document.getElementById("principais-atividades").innerHTML = "Principais Atividades: " + principaisatividades;
+
+
+
+  //Create PDf from HTML...
+function CreatePDFfromHTML() {
+    var HTML_Width = $(".html-content").width();
+    var HTML_Height = $(".html-content").height();
+    var top_left_margin = 15;
+    var PDF_Width = HTML_Width + (top_left_margin * 2);
+    var PDF_Height = (PDF_Width * 3) + (top_left_margin * 2);
+    var canvas_image_width = HTML_Width;
+    var canvas_image_height = HTML_Height;
+
+    var totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+    html2canvas($(".html-content")[0]).then(function (canvas) {
+        var imgData = canvas.toDataURL("image/jpeg", 1.0);
+        var pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+        pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+        for (var i = 1; i <= totalPDFPages; i++) { 
+            pdf.addPage(PDF_Width, PDF_Height);
+            pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+        }
+        pdf.save("Your_PDF_Name.pdf");
+        $(".html-content").hide();
+    });
+}
+
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>
